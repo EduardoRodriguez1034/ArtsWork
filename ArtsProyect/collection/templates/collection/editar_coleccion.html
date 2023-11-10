@@ -1,0 +1,21 @@
+{% extends "collection/base.html" %}
+
+{% block content %}
+    <form id="editarColeccionForm" method="post" action="{% url 'editar_coleccion' collection.id %}">
+        {% csrf_token %}
+        <label for="new_name">Nuevo Nombre:</label>
+        <input type="text" id="new_name" name="new_name" value="{{ collection.name }}">
+        <br>
+        <label for="new_description">Nueva Descripción:</label>
+        <input type="text" id="new_description" name="new_description" value="{{ collection.description }}">
+        <br>
+        <button type="button" onclick="guardarCambios()">Guardar cambios</button>
+    </form>
+
+    <script>
+        function guardarCambios() {
+            // Envía la solicitud hx-post usando el formulario
+            document.getElementById('editarColeccionForm').submit();
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "collection/base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
+    <h1 class="text-3xl font-bold mb-4">{{ collection.name }}</h1>
+    <p class="text-gray-600">{{ collection.description }}</p>
+
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {% for artwork in artworks %}
+            <div class="flex flex-col justify-between p-4 bg-white rounded-lg shadow-md">
+                <img class="object-cover h-48 rounded-lg" src="{{ artwork.image_url }}" alt="{{ artwork.title }}">
+                <div class="mt-4">
+                    <a href="/artwork/{{ artwork.id }}" class="block text-lg font-semibold text-sky-600">{{ artwork.title }}</a>
+                    <p class="mt-2 text-gray-600">{{ artwork.author.name }} - {{ artwork.date }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
