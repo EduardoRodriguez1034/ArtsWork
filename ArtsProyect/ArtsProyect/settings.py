@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-vhm0@40jt3-jyij4-th64(m4yuc!6ioo!wdiu@uzmw8vidyp%o'
+SECRET_KEY = 'django-insecure-op%oaourt2#+9fws-*oroyhl-ymk7a^7uf6q3^d7#olh1n074z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,34 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tailwind',
-    'theme',
-    'django_browser_reload',
-    'widget_tweaks',
-    
 ]
-
-
-NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
-
-HX_SCRIPT_LOCATION = 'https://unpkg.com/hyperhtml@2.0.3/dist/index.mjs'
-
-TAILWIND_APP_NAME= 'theme'
-
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
-
-TAILWIND_SETTINGS = {
-    'DEFAULT_LINE_HEIGHT': '1.5',
-    # Otras configuraciones...
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django_browser_reload.middleware.BrowserReloadMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -99,9 +77,9 @@ WSGI_APPLICATION = 'ArtsProyect.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'artproyect',
+         'NAME':'artproyect',
         'USER':'postgres',
-        'PASSWORD':'LalinPinguin1034',
+        'PASSWORD': 'LalinPinguin1034',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -142,8 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'theme/static/'
-
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
