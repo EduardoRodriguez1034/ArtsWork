@@ -1,0 +1,22 @@
+{% extends "collection/base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
+    <form id="editarColeccionForm" method="post" action="{% url 'editar_coleccion' collection.id %}" class="max-w-md mx-auto bg-white p-8 shadow-md rounded-md">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label for="new_name" class="block text-gray-700 text-sm font-bold mb-2">Nuevo Nombre:</label>
+            <input type="text" id="new_name" name="new_name" value="{{ collection.name }}" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <br>
+            <label for="new_description" class="block text-gray-700 text-sm font-bold mb-2">Nueva Descripción:</label>
+            <input type="text" id="new_description" name="new_description" value="{{ collection.description }}" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <br>
+        </div>
+        <div class="flex items-center justify-end">
+            <button type="submit" class="bg-blue-700 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Guardar cambios</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
